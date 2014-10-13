@@ -1,7 +1,8 @@
 #!/usr/bin/env python
-
-from nd.nd import User, Privilege, current_session
-from nd.sendmail import sendmail
+import sys
+sys.path.append("/usr/local/nd/")
+from nd import User, Privilege, current_session
+from sendmail import sendmail
 import sys
 import argparse
 import os
