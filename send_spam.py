@@ -26,11 +26,11 @@ def main():
     if args.text_file[0] != "/":
         try:
             txtmsg = open(default_template_location +
-                          "/" + args.text_file, "r").read()
+                          "/" + args.text_file, "r").read().decode("utf-8")
         except Exception:
-            txtmsg = open(args.text_file, "r").read()
+            txtmsg = open(args.text_file, "r").read().decode("utf-8")
     else:
-        txtmsg = open(file, "r").read()
+        txtmsg = open(file, "r").read().decode("utf-8")
     if args.html_file:
 
         if args.html_file[0] != "/":
