@@ -36,11 +36,12 @@ def main():
         if args.html_file[0] != "/":
             try:
                 htmlmsg = open(default_template_location +
-                               "/" + args.html_file, "r").read()
+                               "/" + args.html_file,
+                               "r").read().decode("utf-8")
             except Exception:
-                htmlmsg = open(args.html_file, "r").read()
+                htmlmsg = open(args.html_file, "r").read().decode("utf-8")
         else:
-            htmlmsg = open(file, "r").read()
+            htmlmsg = open(file, "r").read().decode("utf-8")
 
     if User.myself() not in Privilege("memberinfo").member:
         print "You're not in the memberinfo group, "\
