@@ -30,7 +30,7 @@ def main():
         except Exception:
             txtmsg = open(args.text_file, "r").read().decode("utf-8")
     else:
-        txtmsg = open(file, "r").read().decode("utf-8")
+        txtmsg = open(args.text_file, "r").read().decode("utf-8")
     if args.html_file:
 
         if args.html_file[0] != "/":
