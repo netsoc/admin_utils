@@ -41,7 +41,7 @@ def main():
             except Exception:
                 htmlmsg = open(args.html_file, "r").read().decode("utf-8")
         else:
-            htmlmsg = open(file, "r").read().decode("utf-8")
+            htmlmsg = open(args.html_file, "r").read().decode("utf-8")
 
     if User.myself() not in Privilege("memberinfo").member:
         print "You're not in the memberinfo group, "\
