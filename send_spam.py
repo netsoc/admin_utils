@@ -55,9 +55,9 @@ def main():
     if args.user is None:
         for u in User.search(tcdnetsoc_membership_year=current_session()):
             print "sending to %s" % u
-#            u.sendmail(msg,
-#                       From='Netsoc PRO <pro@netsoc.tcd.ie>',
-#                       Subject="[Netsoc] %s" % args.subject)
+            u.sendmail(msg,
+                       From='Netsoc PRO <pro@netsoc.tcd.ie>',
+                       Subject="[Netsoc] %s" % args.subject)
     else:
         sendmail(msg,
                  From='Netsoc PRO <pro@netsoc.tcd.ie>',
