@@ -4,6 +4,16 @@ import json
 import os
 import time
 
+import signal
+
+# attempt to ignore ctrl-z
+signal.signal(signal.SIGTSTP, signal.SIG_IGN)
+
+
+def blinking(string):
+	return '\33[5m' + string + '\33[0m'
+
+
 BANNER = """ W e l c o m e   t o
    ______        __
   / ____ \ ___  / /__________  _____
@@ -11,9 +21,8 @@ BANNER = """ W e l c o m e   t o
 / / / / //  __/ /_(__  ) /_/ / /__
 \/_/ /_/ \___/\__/____/\____/\___/
  \____/
-           F r e s h e r s ' 2 0 1 6
+           F r e s h e r s '  2 0 1 6
 """
-
 
 def yes_no(prompt):
     answers = {
@@ -50,13 +59,24 @@ def get_username(prompt):
     return username
 
 
+def get_name(prompt):
+    while True:
+        name = input(prompt)
+        if not name:
+            print("  We need something, anything!")
+        elif name.lower() in ['hugh mungus', 'hugh mongus']:
+            print(blinking("  Now that's one SPICY MEME"))
+        else:
+            return name
+
+
 def get_user_details():
     user = dict()
     prompts = (
             ("What's your name?\n"
              "       >> ",
              'name',
-             input),
+             get_name),
 
             ("What's your email address?\n"
              "       >> ",
