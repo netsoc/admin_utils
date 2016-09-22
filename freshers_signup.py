@@ -1,7 +1,8 @@
 #!/usr/bin/env python3
+import datetime
 import json
 import os
-import datetime
+import time
 
 BANNER = """ W e l c o m e   t o
    ______        __
@@ -136,7 +137,11 @@ def signups(users_file):
             valid = yes_no("Are **all** of these details correct?")
             if valid:
                 register_user(users_file, user)
-                input("Welcome, {}!".format(user['name'].split(' ')[0]))
+                print("Welcome, {}!".format(user['name'].split(' ')[0]))
+                time.sleep(2)
+                for _ in range(25):
+                    print()
+                    time.sleep(0.05)
             else:
                 continue
         except (KeyboardInterrupt, EOFError):
