@@ -21,7 +21,7 @@ BANNER = """ W e l c o m e   t o
 / / / / //  __/ /_(__  ) /_/ / /__
 \/_/ /_/ \___/\__/____/\____/\___/
  \____/
-           F r e s h e r s '  2 0 1 6
+           F r e s h e r s '  2 0 1 7
 """
 
 def yes_no(prompt):
