@@ -74,7 +74,7 @@ def get_name(prompt):
 def get_user_details():
     user = dict()
     prompts = (
-            ("What's your name?\n"
+            ("What's your full name?\n"
              "       >> ",
              'name',
              get_name),
